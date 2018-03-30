@@ -81,8 +81,8 @@ export default class MessageBar extends Component {
       { toValue: 1, duration: showAnimationDuration, useNativeDriver: true },
     ).start(() => setTimeout(() => this.hideMessage(message), duration));
   }
-  hideMessage(message) {
-    if (message === this.state.message) {
+  hideMessage(message = null) {
+    if (message === this.state.message || message === null) {
       const { hideAnimationDuration } = this.getConfig();
       this.setState({ isAnimatingHide: true });
       Animated.timing(
