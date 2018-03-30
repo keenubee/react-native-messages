@@ -9,4 +9,7 @@ export default {
   showMessage(message, config) {
     this.messageBar.pushMessage({ message }, config || {});
   },
+  hideMessage() {
+    this.messageBar.hideMessage();
+  },
 };
